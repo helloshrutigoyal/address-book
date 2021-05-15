@@ -1,0 +1,34 @@
+<div class="contact-list">
+    <div class="list-container" *ngIf="!showContactForm">
+        <app-contact-renderer *ngFor="let contact of contacts"
+                                [contact]="contact"
+                                (editContact)="editContactHandler($event)"
+                                (deleteContact)="deleteContactHandler($event)">
+        </app-contact-renderer>
+    </div>
+    <div class="no-contacts" *ngIf="contacts?.length === 0 && !showContactForm">
+        <label class="msg">No Contacts Available</label>
+        <button class="btn" (click)="addNewContact()">Add New Contact</button>
+    </div>
+
+    <ng-template #contactFormTemplate [ngIf]="showContactForm">
+       <form [formGroup]="contactForm" class="contact-form">
+            <div class="form-field">
+                <label class="form-field-label" for="fname">First Name:</label>
+                <input class="form-input" type="text" id="fname" formControlName="fname"/>
+            </div>
+            <div class="form-field">
+                <label class="form-field-label" for="lname">Last Name:</label>
+                <input class="form-input" type="text" id="lname" formControlName="lname"/>
+            </div>
+            <div class="form-field">
+                <label class="form-field-label" for="phone">Phone:</label>
+                <input class="form-input" type="text" id="phone" formControlName="phone"/>
+            </div>
+            <div class="control-bar">
+                <button class="btn" (click)="saveContactForm()" [disabled]="!contactForm.valid">Save</button>
+                <button class="btn" (click)="cancelContactForm()">Cancel</button>
+            </div>
+        </form>
+    </ng-template>
+</div>

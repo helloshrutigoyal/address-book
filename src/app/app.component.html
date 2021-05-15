@@ -1,0 +1,38 @@
+<div class="app-container">
+  <div class="app-header display-inline-flex">
+    <div class="logo display-inline-block"></div>
+    <div class="title display-inline-block text-bold">{{title}}</div>
+  </div>
+
+  <div class="app-content">
+    <div class="toolbar">
+      <input class="search-box" type="text" [(ngModel)]="searchInput"
+              (ngModelChange)="searchInputChangeHandler()"/>
+      <div class="icon icon-search" (click)="searchContacts()"></div>
+
+      <div class="icon icon-add" (click)="addNewContact()"></div>
+    </div>
+    <div class="sort-controls">
+      <div class="sort-by">
+        <label class="sort-label">Sort By:</label>
+        <ui-switch (change)="sortByFieldChangeHandler($event)"
+                  uncheckedLabel="First Name"
+                  checkedLabel="Last Name">
+        </ui-switch>
+      </div>
+
+      <div class="sort-order">
+        <label class="sort-label">Sort Order:</label>
+        <ui-switch (change)="sortOrderChangeHandler($event)"
+                  uncheckedLabel="A-Z"
+                  checkedLabel="Z-A">
+        </ui-switch>
+      </div>
+    </div>
+    <app-contact-list #contactList
+                      [contacts]="contacts"
+                      (editContact)="editContactHandler($event)"
+                      (deleteContact)="deleteContactHandler($event)"
+                      (addContact)="addContactHandler($event)"></app-contact-list>
+  </div>
+</div>

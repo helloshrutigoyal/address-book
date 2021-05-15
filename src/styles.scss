@@ -1,0 +1,61 @@
+@import "./variables.scss";
+@import '~ngx-ui-switch/ui-switch.component.scss';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow-y: hidden;
+    margin: 0px;
+}
+
+.display-inline-flex {
+    display: inline-flex;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.btn {
+    background-image: linear-gradient($base-theme-color1, $base-theme-color2);
+    height: 30px;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:disabled, .btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input[type=text] {
+    border: 1px solid $base-theme-color2;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.switch {
+    outline: none !important;
+}
+
+.checked {
+    background-color: $base-theme-color2 !important;
+}
+
+.checked small {
+    background-color: $base-theme-color3 !important;
+}

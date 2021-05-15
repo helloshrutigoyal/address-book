@@ -1,0 +1,15 @@
+<div class="contact-renderer">
+    <div class="name">
+        <span class="name-key">{{name[0]}}</span>
+        <span class="name-text">{{name}}</span>
+        <div class="icons-container">
+            <div class="icon icon-edit" (click)="editContactHandler()"></div>
+            <div class="icon icon-delete" (click)="deleteContactHandler()"></div>
+        </div>
+    </div>
+    <div class="phone">
+        <span class="icon phone-icon"></span>
+        <span class="phone-text">{{contact?.phone}}</span>
+    </div>
+</div>
+<!--#18b4e6-->
