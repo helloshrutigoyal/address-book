@@ -14,8 +14,8 @@ For Toggling switches, I have used ngx-ui-switch library.
 ***Note:*** For most files, I have added comments in the file itself.
 
 ## Running Electron Application
-Run `npm install` to install node_modules
-Run `npm run build:electron` for the Address Book electron application.
+* Run `npm install` to install node_modules
+* Run `npm run build:electron` for the Address Book electron application.
 
 ## Packaging Electron Application
 Run `npm run package:electron` for the Address Book electron application package.
@@ -29,8 +29,8 @@ Run `npm run package:electron` for the Address Book electron application package
 * Update Existing Contact - Click on Edit button beside each contact's name to edit the contact.
 * Delete Contact - Click on Delete button beside each contact's name to delete the contact.
 * Sort Contacts: 
-    * By First Name/Last Name - Toggle the Sort By switch to sort on first name/last name of the contacts.
-    * Ascending/Descendeing Order - Toggle the Sort Order switch to sort in ascending or descending order.
+    * By First Name/Last Name - Toggle the Sort By switch to sort on first name/last name of the contacts. This will sort only first name/last along with the already selected ascending/descending order. For e.g. - if First Name is selected in Sort By then Sort Order A-Z or Z-A will get applied on First Name and vice-versa.
+    * Ascending/Descendeing Order - Toggle the Sort Order switch to sort in ascending or descending order.This will sort only in ascending/descending order based on the field already selected in sort by.
 * Filtering Contacts - Type in the search input box to view the filtered results.
 
 ## Running unit tests
